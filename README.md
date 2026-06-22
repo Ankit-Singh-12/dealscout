@@ -1,3 +1,16 @@
+---
+title: DealScout
+emoji: 📎
+colorFrom: green
+colorTo: indigo
+sdk: gradio
+sdk_version: 5.50.0
+app_file: app.py
+pinned: false
+license: mit
+short_description: Autonomous deal-hunting AI - demo mode, no API keys needed
+---
+
 # DealScout
 
 > **Autonomous deal-hunting AI** - an agentic system that estimates what a product is *really* worth and surfaces online bargains in real time.
@@ -230,8 +243,9 @@ unset or `false`, the full real pipeline runs exactly as before.
 3. Spaces installs from `requirements.txt` (the slim set) and runs `app.py`
    automatically - demo mode is forced on, so **no secrets are needed**.
 
-Add this front-matter block to the top of the Space's `README.md` so it boots as
-a Gradio SDK app:
+Spaces reads its configuration from a YAML front-matter block that must be the
+**very first lines of `README.md`** (before the `# DealScout` heading). This repo
+already includes one - keep it at the top and it will boot as a Gradio SDK app:
 
 ```yaml
 ---
@@ -240,10 +254,17 @@ emoji: 📎
 colorFrom: green
 colorTo: indigo
 sdk: gradio
+sdk_version: "5.50.0"
 app_file: app.py
 pinned: false
+license: mit
+short_description: Autonomous deal-hunting AI - demo mode, no API keys needed
 ---
 ```
+
+> The `app_file: app.py` line is what points the Space at the demo entry point.
+> See the [Spaces config reference](https://huggingface.co/docs/hub/spaces-config-reference)
+> for every supported field.
 
 > **Tip:** if you ever want the hosted Space to use the real pipeline, add your
 > keys as Space **secrets** and set `DEALSCOUT_DEMO_MODE=false` - but note that
