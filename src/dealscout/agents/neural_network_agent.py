@@ -1,6 +1,6 @@
 from pathlib import Path
 from dealscout.agents.agent import Agent
-from dealscout.agents.deep_neural_network import DeepNeuralNetworkInference
+from dealscout.models.deep_neural_network import DeepNeuralNetworkInference
 
 
 class NeuralNetworkAgent(Agent):
