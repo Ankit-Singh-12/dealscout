@@ -1,9 +1,5 @@
 """Build the Chroma vector store used by the RAG FrontierAgent.
 
-Loads the curated dataset from the HuggingFace Hub, encodes each product
-summary with all-MiniLM-L6-v2, and writes the vectors into a persistent
-Chroma collection named "products".
-
 Usage:
     uv run python scripts/build_vectorstore.py --lite      # 20k items (fast)
     uv run python scripts/build_vectorstore.py             # full 800k items
